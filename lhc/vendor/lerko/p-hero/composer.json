@@ -1,0 +1,36 @@
+{
+    "name": "lerko/p-hero",
+    "type": "library",
+    "description": "orm database library",
+    "keywords": ["database","swoole","sql","mysql","p-hero","连接池"],
+    "authors": [
+        {
+            "name": "CYQ19931115",
+            "email": "614325722@QQ.COM"
+        }
+    ],
+    "version": "v1.0.3",
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/cache":"v3.3.5",
+        "league/climate":"3.2.1",
+        "zendframework/zend-code" : "3.1.0",
+        "predis/predis": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*",
+        "webmozart/console": "1.0.0-beta5"
+    },
+    "autoload":{
+    	"psr-4": {
+            "Phero\\": "src/Phero/",
+            "PheroTest\\": "test/PheroTest/"
+	    }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}

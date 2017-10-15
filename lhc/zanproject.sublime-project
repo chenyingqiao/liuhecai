@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "D:\\dev_12301\\www\\html\\Phero"
+		}
+	],
+	"settings":
+	{
+		"xdebug":
+		{
+			"close_on_stop": true,
+			"path_mapping":
+			{
+			},
+			"port": 9000,
+			"super_globals": true,
+			"url": "http://localhost/"
+		}
+	}
+}

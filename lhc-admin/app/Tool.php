@@ -6,7 +6,7 @@ namespace App;
  * @Author: lerko
  * @Date:   2017-10-15 16:21:17
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-15 22:09:09
+ * @Last Modified time: 2017-10-17 08:50:51
  */
 /**
 * 工具类
@@ -46,7 +46,39 @@ class Tool
 		}
 	}
 
+	/**
+	 * 返回购买的种类
+	 * @Author   Lerko
+	 * @DateTime 2017-10-17T08:27:52+0800
+	 * @param    [type]                   $key [description]
+	 * @return   [type]                        [description]
+	 */
+	public static function getBuyType($key){
+		$map=[
+			"波色",
+			"生肖",
+			"号码",
+			"单双"
+		];
+		return $map[$key];
+	}
+
 	public static function getBellImagePath($id){
 		return "image/bell/$id.png";
+	}
+
+	/**
+	 * 获取求图像string
+	 * @Author   Lerko
+	 * @DateTime 2017-10-17T08:33:08+0800
+	 * @param    array                    $ids [description]
+	 * @return   [type]                        [description]
+	 */
+	public static function getBellImagePathList(array $ids){
+		$htmlString="";
+		foreach ($ids as $key => $value) {
+			$htmlString.="<img src='/image/bell/$value.png' />";
+		}
+		return $htmlString;
 	}
 }

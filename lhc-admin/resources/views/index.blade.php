@@ -43,27 +43,27 @@
 				</div>
 				
 				<div class="datatime-pannel width-100 center">
-					<div class="datatime-span orange radius-25">第123期 2017-10-10 21点31分 星期日</div>
+					<div class="datatime-span orange radius-25">第{{$id}}期 {{$time}} 21点31分 {{$week}}</div>
 				</div>
 				<div class="width-100">
 					<img class="width-100" src="image/banner2.png">
 				</div>
 				<div class="width-100">
 					<div class="below-title-div">
-						<div class="below-title float-left">2017-01-01 第121期推荐</div>
+						<div class="below-title float-left">{{$time}} 第 {{$id}} 期推荐</div>
 						<img class="huo" src="image/huo.png" alt="">
 					</div>
 					<div class="below-content-div">
-						<div class="below-span">特码[单]</div>
-						<div class="below-span">生肖[家禽]</div>
+						<div class="below-span">{{$recommend[0]}}</div>
+						<div class="below-span">{{$recommend[1]}}</div>
 					</div>
 					<div class="below-content-div">
-						<div class="below-span">生肖[单]</div>
-						<div class="below-span">生肖[单]</div>
+						<div class="below-span">{{$recommend[2]}}</div>
+						<div class="below-span">{{$recommend[3]}}</div>
 					</div>
 					<div class="below-content-div">
-						<div class="below-span">生肖[单]</div>
-						<div class="below-span">生肖[单]</div>
+						<div class="below-span">{{$recommend[4]}}</div>
+						<div class="below-span">{{$recommend[5]}}</div>
 					</div>
 				</div>
 			</div>

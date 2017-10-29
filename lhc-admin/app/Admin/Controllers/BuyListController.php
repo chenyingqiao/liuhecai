@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Buy;
+use App\Html;
 use App\Http\Controllers\Controller;
 use App\Tool;
 use Encore\Admin\Controllers\ModelForm;
@@ -15,85 +16,88 @@ use Encore\Admin\Layout\Content;
  * @Author: lerko
  * @Date:   2017-10-16 21:45:04
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-17 08:50:23
+ * @Last Modified time: 2017-10-29 16:18:01
  */
 /**
-* 购买列表
-*/
-class BuyListController extends Controller
-{
+ * 购买列表
+ */
+class BuyListController extends Controller {
 	use ModelForm;
 
-	public function index()
-	{
-		return Admin::content(function(Content $content){
-			$content->header("六合彩开奖购买页面");
-			$content->description("六合才购买统计页面");
+	public function index() {
+		return Admin::content(function (Content $content) {
+			$content->header("今日购买列表");
 
 			$content->body($this->grid());
 		});
 	}
 
-	public function edit($id){
-		return Admin::content(function(Content $content) use ($id){
-            $content->header('header');
-            $content->description('description');
-
-            $content->body($this->form()->edit($id));
+	public function edit($id) {
+		return Admin::content(function (Content $content) use ($id) {
+			$content->header('header');
+			$content->description('description');
 		});
 	}
 
+	/**
+	 * Create interface.
+	 *
+	 * @return Content
+	 */
+	public function create() {
+		return Admin::content(function (Content $content) {
 
-    /**
-     * Create interface.
-     *
-     * @return Content
-     */
-    public function create()
-    {
-        return Admin::content(function (Content $content) {
+			$content->header('header');
+			$content->description('description');
 
-            $content->header('header');
-            $content->description('description');
+			$content->body($this->form());
+		});
+	}
 
-            $content->body($this->form());
-        });
-    }
+	/**
+	 * Make a grid builder.
+	 *
+	 * @return Grid
+	 */
+	protected function grid() {
+		return Admin::grid(Buy::class, function (Grid $grid) {
+			$uid = Admin::user()->id;
+			if ($uid !== 1) {
+				$grid->model()->where("uid", '=', $uid);
+				$grid->model()->where("datetime", '=', Tool::getDayTime());
+			}
 
-    /**
-     * Make a grid builder.
-     *
-     * @return Grid
-     */
-    protected function grid()
-    {
-        return Admin::grid(Buy::class, function (Grid $grid) {
+			$grid->id('ID')->sortable();
+			$grid->type("类型")->display(function ($type) {
+				return Tool::getBuyType($type);
+			});
 
-            $grid->id('ID')->sortable();
-            $grid->type()->display(function($type){
-            	return Tool::getBuyType($type);
-            });
+			$grid->data("数据")->display(function ($data) {
+				if ($this->type == 0) {
+					$data= Tool::getBellBosheMap();
+                    $keys = array_keys($data);
+                    return Html::redFont($keys[$data]);
+				} elseif ($this->type == 1) {
+					$shengxiao = Tool::getBellMapData();
+					$keys = array_keys($shengxiao);
+					return Html::redFont($keys[$data]);
+				} elseif ($this->type == 2) {
+					return Tool::getBellImagePathList([$data]);
+				} elseif ($this->type == 3) {
+					$danshuang = Tool::getDanshuang();
+					return Html::colorFont($danshuang[$data],"green");
+				}
+			});
+			$grid->money("下单金额");
+			$grid->datetime("下单日期")->display(function ($data) {
+				return explode(" ", $data)[0];
+			});
+			$grid->created_at("下单时间");
+			$grid->updated_at("修改金额时间");
 
-            $grid->data()->display(function($data){
-            	$ids=explode(",",$data);
-            	return Tool::getBellImagePathList($ids);
-            });
-            $grid->datetime();
-        });
-    }
-
-    /**
-     * Make a form builder.
-     *
-     * @return Form
-     */
-    protected function form()
-    {
-        return Admin::form(Buy::class, function (Form $form) {
-
-            $form->display('id', 'ID');
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
-        });
-    }
+			$grid->actions(function ($actions) {
+				$actions->disableEdit();
+			});
+		});
+	}
 }

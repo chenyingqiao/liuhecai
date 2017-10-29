@@ -500,7 +500,7 @@
 		<div style="width: 100%;height: 60px;"></div>
 		<div class="below-content-div width-100 mune">
 			<div class="mune-grow">
-				<a href="index.html">
+				<a href="/">
 					<div class="mune-item">
 						<img src="image/1.png">
 					</div>
@@ -510,7 +510,7 @@
 				</a>
 			</div>
 			<div class="mune-grow">
-				<a href="list.html">
+				<a href="#">
 					<div class="mune-item">
 						<img src="image/2.png">
 					</div>

@@ -11,4 +11,6 @@ Route::group([
 ], function (Router $router) {
     $router->get('/', 'HomeController@index');
     $router->get('/buylist', 'BuyListController@index');
+    $router->get('/touzhu', 'TouzhuController@index');
+    $router->post('/touzhu/touzhuing', 'TouzhuController@touzhuing');
 });

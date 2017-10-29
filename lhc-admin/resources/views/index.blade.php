@@ -82,7 +82,7 @@
 				</a>
 			</div>
 			<div class="mune-grow">
-				<a href="list.html">
+				<a href="/list">
 					<div class="mune-item">
 						<img src="image/2.png">
 					</div>

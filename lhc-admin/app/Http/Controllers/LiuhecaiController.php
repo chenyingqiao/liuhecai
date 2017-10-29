@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Blade;
  * @Author: lerko
  * @Date:   2017-10-15 15:45:55
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-16 21:39:19
+ * @Last Modified time: 2017-10-29 10:03:23
  */
 /**
 * 用户端界面
@@ -21,10 +21,10 @@ class LiuhecaiController extends Controller
 	//开奖首页
 	public function index(){
 		//今天的开奖信息
-		$lottery=Lottery::where("datetime",Tool::getDayTime())
-				->first()->toArray();
+		$lottery=Lottery::orderBy("datetime","desc")
+				->first();
 		//今天的推荐信息
-		$recommend=Recommend::where("datetime",Tool::getDayTime())
+		$recommend=Recommend::orderBy("datetime","desc")
 				->first()->toArray();
 		$weekarray=array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
 		$data=[
@@ -51,6 +51,22 @@ class LiuhecaiController extends Controller
 		});
 		
 		return view("index",$data);
+	}
+
+	public function list()
+	{
+		return view("list");
+	}
+
+	/**
+	 * 购买六合彩
+	 * @Author   Lerko
+	 * @DateTime 2017-10-29T10:03:14+0800
+	 * @param    [type]                   $buylist [description]
+	 * @return   [type]                            [description]
+	 */
+	public function buy($buylist){
+		var_dump($buylist);
 	}
 
 	

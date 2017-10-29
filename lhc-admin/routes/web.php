@@ -12,3 +12,4 @@
 */
 
 Route::get('/', "LiuhecaiController@index");
+Route::get('/list', "LiuhecaiController@list");

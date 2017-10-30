@@ -16,7 +16,7 @@ use Encore\Admin\Layout\Content;
  * @Author: lerko
  * @Date:   2017-10-16 21:45:04
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-29 16:18:01
+ * @Last Modified time: 2017-10-30 20:15:13
  */
 /**
  * 购买列表
@@ -74,8 +74,8 @@ class BuyListController extends Controller {
 
 			$grid->data("数据")->display(function ($data) {
 				if ($this->type == 0) {
-					$data= Tool::getBellBosheMap();
-                    $keys = array_keys($data);
+					$boshe= Tool::getBellBosheMap();
+                    $keys = array_keys($boshe);
                     return Html::redFont($keys[$data]);
 				} elseif ($this->type == 1) {
 					$shengxiao = Tool::getBellMapData();

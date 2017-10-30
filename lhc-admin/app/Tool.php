@@ -8,7 +8,7 @@ use App\Html;
  * @Author: lerko
  * @Date:   2017-10-15 16:21:17
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-29 16:13:20
+ * @Last Modified time: 2017-10-30 20:16:04
  */
 /**
  * 工具类
@@ -200,9 +200,9 @@ class Tool {
 			[
 				"row" => ["波色", "号", "赔率", "金额"],
 				"data" => [
-					["红波", self::getBellImagePathList(self::getBellBoshe("红波")), Html::redFont("2.7"), Html::getTextEdit("value[0]",1)],
-					["蓝波", self::getBellImagePathList(self::getBellBoshe("蓝波")), Html::redFont("2.7"), Html::getTextEdit("value[1]",2)],
-					["绿波", self::getBellImagePathList(self::getBellBoshe("绿波")), Html::redFont("2.7"), Html::getTextEdit("value[2]",3)],
+					["红波", self::getBellImagePathList(self::getBellBoshe("红波")), Html::redFont("2.7"), Html::getTextEdit("value[0]",0)],
+					["蓝波", self::getBellImagePathList(self::getBellBoshe("蓝波")), Html::redFont("2.7"), Html::getTextEdit("value[1]",1)],
+					["绿波", self::getBellImagePathList(self::getBellBoshe("绿波")), Html::redFont("2.7"), Html::getTextEdit("value[2]",2)],
 				],
 			],
 			[

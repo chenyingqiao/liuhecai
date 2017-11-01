@@ -8,7 +8,7 @@ use App\Html;
  * @Author: lerko
  * @Date:   2017-10-15 16:21:17
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-30 20:16:04
+ * @Last Modified time: 2017-11-01 07:59:18
  */
 /**
  * 工具类
@@ -51,7 +51,7 @@ class Tool {
 
 	public static function getTouzhuType(){
 		return [
-			"波色","生肖","号码","单双"
+			"波色","生肖","号码A","单双","号码B"
 		];
 	}
 
@@ -91,12 +91,7 @@ class Tool {
 	 * @return   [type]                        [description]
 	 */
 	public static function getBuyType($key) {
-		$map = [
-			"波色",
-			"生肖",
-			"号码",
-			"单双",
-		];
+		$map = self::getTouzhuType();
 		return $map[$key];
 	}
 
@@ -236,7 +231,7 @@ class Tool {
 					"号码", "赔率", "金额",
 					"号码", "赔率", "金额",
 				],
-				"data" => self::getTableHaomaData(),
+				"data" => self::getTableHaomaData("45"),
 			],
 		];
 		return $data;

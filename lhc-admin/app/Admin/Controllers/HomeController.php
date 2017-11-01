@@ -3,7 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\Dashboard;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
@@ -15,26 +14,20 @@ class HomeController extends Controller {
 		return Admin::content(function (Content $content) {
 			$uid = Admin::user()->id;
 
-			$infoBox = new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024');
-			if ($uid == 1) {
-				$content->row(function (Row $row) {
-					$row->column(4, function (Column $column) {
-						$column->append(Dashboard::environment());
-					});
-
-					$row->column(4, function (Column $column) {
-						$column->append(Dashboard::dependencies());
-					});
+			$content->row(function (Row $row) {
+				$row->column(3, function (Column $column) {
+					$infoBox = new InfoBox('我要下注', 'users', 'aqua', '/admin/touzhu', 1752);
+					$column->append($infoBox);
 				});
-			} else {
-				$content->row(function (Row $row) {
-					$row->column(3, function (Column $column) {
-						$infoBox = new InfoBox('平台总共用户数量', 'users', 'aqua', '#', 1752);
-
-						$column->append($infoBox);
-					});
+				$row->column(3, function (Column $column) {
+					$infoBox = new InfoBox('查看今日下注', 'users', 'red', '/admin/buylist', 1752);
+					$column->append($infoBox);
 				});
-			}
+				$row->column(3, function (Column $column) {
+					$infoBox = new InfoBox('查看下注历史', 'users', 'blue', '/admin/touzhu', 1752);
+					$column->append($infoBox);
+				});
+			});
 
 		});
 	}

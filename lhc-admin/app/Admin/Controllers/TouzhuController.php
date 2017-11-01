@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Input;
  * @Author: lerko
  * @Date:   2017-10-28 21:03:39
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-30 20:12:40
+ * @Last Modified time: 2017-11-01 07:57:48
  */
 /**
  * 投注
@@ -36,7 +36,8 @@ class TouzhuController extends Controller {
 			$tab = new Tab();
 			$tab->add("波色投注", Html::getBuyTable());
 			$tab->add("生肖投注", Html::getBuyTable(1));
-			$tab->add("号码投注", Html::getBuyTable(2));
+            $tab->add("号码投注A", Html::getBuyTable(2));
+			$tab->add("号码投注B", Html::getBuyTable(4));
 			$tab->add("单双投注", Html::getBuyTable(3));
 			$content->body($tab);
 		});

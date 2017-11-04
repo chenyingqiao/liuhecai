@@ -5,9 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<style type="text/css">
 		.background{
-			width:90%;
-			height: 90%;
-			border:10px #000 solid;
+			width:80%;
+			/*border:10px #000 solid;*/
 			/*margin:0 auto;*/
 		}
 		.image-content{
@@ -16,21 +15,53 @@
 			position: absolute;
 			top: 10%;
 		}
-
+		.size{
+			width: 13%;
+			height:13%;
+		}
 	</style>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 </head>
-<body style="margin: 0px;background:#000;">
+<body style="margin: 0px;background:#fff;">
 	<div class="image-content">
 		<div><img src="image/video1.gif" class="background"></div>
-		<div>
-			<span><img src="image/bell.png" alt=""></span>
-			<span><img src="image/bell.png" alt=""></span>
-			<span><img src="image/bell.png" alt=""></span>
-			<span><img src="image/bell.png" alt=""></span>
-			<span><img src="image/bell.png" alt=""></span>
-			<span><img src="image/bell.png" alt=""></span>
+		<div style="background-color:#fff;padding-top: 4px;;">
+			<span><img src="image/bell.png" class="size" id="bell1" alt=""></span>
+			<span><img src="image/bell.png" class="size" id="bell2" alt=""></span>
+			<span><img src="image/bell.png" class="size" id="bell3" alt=""></span>
+			<span><img src="image/bell.png" class="size" id="bell4" alt=""></span>
+			<span><img src="image/bell.png" class="size" id="bell5" alt=""></span>
+			<span><img src="image/bell.png" class="size" id="bell6" alt=""></span>
+			<span><img src="image/bell.png" class="size" id="bell7" alt=""></span>
 		</div>
 	</div>
-<!-- 		<div style="position: absolute; top: 45%; text-align: center;width: 100%;color:#fff;font-size: 1.7rem;">摇奖还未开始，9.30准时开始</div> -->
+<!-- 		<div style="position: absolute; top: 45%; text-align: center;width: 100%;color:#000;font-size: 1.7rem;">摇奖还未开始，9.30准时开始</div> -->
+
+	<script type="text/javascript">
+		$(function(){
+			$("img[id^='bell']").hide();
+			setTimeout(function(){
+				$("#bell1").show(1000);
+			},2000)
+			setTimeout(function(){
+				$("#bell2").show(1000);
+			},4000)
+			setTimeout(function(){
+				$("#bell3").show(1000);
+			},6000)
+			setTimeout(function(){
+				$("#bell4").show(1000);
+			},8000)
+			setTimeout(function(){
+				$("#bell5").show(1000);
+			},10000)
+			setTimeout(function(){
+				$("#bell6").show(1000);
+			},12000)
+			setTimeout(function(){
+				$("#bell7").show(1000);
+			},14000)
+		});		
+	</script>
 </body>
 </html>

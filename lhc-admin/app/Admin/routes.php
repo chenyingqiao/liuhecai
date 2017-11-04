@@ -13,4 +13,6 @@ Route::group([
     $router->get('/buylist', 'BuyListController@index');
     $router->get('/touzhu', 'TouzhuController@index');
     $router->post('/touzhu/touzhuing', 'TouzhuController@touzhuing');
+    $router->resource('lottery',AdminPageController::class);
+    $router->get('/tongji','AdminPageController@tongji');
 });

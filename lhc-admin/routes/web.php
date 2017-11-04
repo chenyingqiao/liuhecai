@@ -13,3 +13,5 @@
 
 Route::get('/', "LiuhecaiController@index");
 Route::get('/list', "LiuhecaiController@list");
+Route::get('/buylist/getLittery', 'LiuhecaiController@getLittery');
+

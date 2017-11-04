@@ -2,13 +2,14 @@
 
 namespace App;
 
+use App\Data;
 use App\Html;
 
 /**
  * @Author: lerko
  * @Date:   2017-10-15 16:21:17
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-11-01 07:59:18
+ * @Last Modified time: 2017-11-04 15:32:15
  */
 /**
  * 工具类
@@ -51,7 +52,7 @@ class Tool {
 
 	public static function getTouzhuType(){
 		return [
-			"波色","生肖","号码A","单双","号码B"
+			"波色","生肖","号码A","号码B","单双",
 		];
 	}
 
@@ -215,15 +216,6 @@ class Tool {
 				"data" => self::getTableHaomaData(),
 			],
 			[
-				"row"=>[
-					"号码", "赔率", "金额",
-					"号码", "赔率", "金额",
-					"号码", "赔率", "金额",
-					"号码", "赔率", "金额",
-				],
-				"data"=>self::getTableDanshuangData(),
-			],
-			[
 				"row" => [
 					"号码", "赔率", "金额",
 					"号码", "赔率", "金额",
@@ -233,7 +225,77 @@ class Tool {
 				],
 				"data" => self::getTableHaomaData("45"),
 			],
+			[
+				"row"=>[
+					"号码", "赔率", "金额",
+					"号码", "赔率", "金额",
+					"号码", "赔率", "金额",
+					"号码", "赔率", "金额",
+				],
+				"data"=>self::getTableDanshuangData(),
+			],
+
 		];
 		return $data;
+	}
+
+	public static function randColor($row=3){
+		$data=[];
+		for ($i=0; $i < $row; $i++) { 
+			$data[]=rand(0,255).",".rand(0,255).",".rand(0,255);
+		}
+		return $data;
+	}
+
+	public static function getCharData($type){
+		switch ($type) {
+			case 1:
+				$toolData=self::getBellBosheMap();
+				return [
+					"name"=>"boshe",
+					"labels"=>array_keys($toolData),
+					"msg"=>"波色：投注总金额(元)",
+					"data"=>Data::statistics(0),
+					"color"=>[
+						"244, 65, 106",
+						"65, 187, 244",
+						"118, 244, 65"
+					]
+				];
+			case 2:
+				$toolData=self::getBellMapData();
+				return [
+					"name"=>"shengxiao",
+					"labels"=>array_keys($toolData),
+					"msg"=>"生肖：投注总金额(元)",
+					"data"=>Data::statistics(1),
+					"color"=>self::randColor(12)
+				];
+			case 3:
+				return [
+					"name"=>"haomaA",
+					"labels"=>range(1,49),
+					"msg"=>"号码A盘：投注总金额(元)",
+					"data"=>Data::statistics(2),
+					"color"=>self::randColor(49)
+				];
+			case 4:
+				return [
+					"name"=>"haomaB",
+					"labels"=>range(1,49),
+					"msg"=>"号码B盘：投注总金额(元)",
+					"data"=>Data::statistics(3),
+					"color"=>self::randColor(49)
+				];
+			case 5:
+				$toolData=self::getDanshuang();
+				return [
+					"name"=>"danshuang",
+					"labels"=>array_keys($toolData),
+					"msg"=>"单双：投注总金额(元)",
+					"data"=>Data::statistics(4),
+					"color"=>self::randColor(8)
+				];
+		}
 	}
 }

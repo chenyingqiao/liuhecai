@@ -5,17 +5,17 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'      => '彩票开奖管理后台',
+    'name'      => '五合彩',
 
     /*
      * Logo in admin panel header.
      */
-    'logo'      => '<b>彩票开奖管理后台</b>',
+    'logo'      => '<b>五合彩</b>',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>LHC</b>',
+    'logo-mini' => '<b>5HC</b>',
 
     /*
      * Route configration.

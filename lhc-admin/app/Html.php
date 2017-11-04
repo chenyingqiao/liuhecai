@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\URL;
  * @Author: lerko
  * @Date:   2017-10-28 14:21:03
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-29 16:19:24
+ * @Last Modified time: 2017-11-04 15:24:43
  */
 /**
  * html同居
@@ -48,6 +48,7 @@ HTML;
 	 */
 	public static function getTextEdit($name, $data) {
 		$money = 0;
+		$money= rand(100,1000);
 		return <<<HTML
 <input type="hidden" name="{$name}[]" value="{$data}" >
 <input type="number" name="{$name}[]" class="form-control" value="{$money}" min="" max="" step="" required="required" title="">
@@ -76,5 +77,12 @@ HTML;
 		<h1>{$msg}</h1>
 		<a href="javascript:" class="btn btn-danger" onclick="self.location=document.referrer;">返回上一页</a>
 HTML;
+	}
+
+
+	public static function getChar($type){
+		$data=Tool::getCharData($type);
+		// var_dump($data);die;
+		return view('Widget.charbar',$data)->render();
 	}
 }

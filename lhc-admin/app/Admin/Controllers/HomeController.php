@@ -28,7 +28,6 @@ class HomeController extends Controller {
 					$column->append($infoBox);
 				});
 			});
-
 		});
 	}
 }

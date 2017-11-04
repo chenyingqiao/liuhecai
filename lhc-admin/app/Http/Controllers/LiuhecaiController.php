@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Blade;
  * @Author: lerko
  * @Date:   2017-10-15 15:45:55
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-29 10:03:23
+ * @Last Modified time: 2017-11-04 11:01:36
  */
 /**
 * 用户端界面
@@ -59,15 +59,22 @@ class LiuhecaiController extends Controller
 	}
 
 	/**
-	 * 购买六合彩
+	 * 9点30获取发布的六合彩信息
 	 * @Author   Lerko
-	 * @DateTime 2017-10-29T10:03:14+0800
-	 * @param    [type]                   $buylist [description]
-	 * @return   [type]                            [description]
+	 * @DateTime 2017-11-04T10:12:23+0800
+	 * @param    string                   $value [description]
+	 * @return   [type]                          [description]
 	 */
-	public function buy($buylist){
-		var_dump($buylist);
+	public function getLittery($value='')
+	{
+		if($nowTime<=$jiudianbanEnd && $nowTime>=$jiudianbanStart){
+			return "fuck this time";
+		}
+		$lottery=Lottery::where("datetime",Tool::getDayTime())
+				->first();
+		if($lottery){
+			return json_encode($lottery->toArray());
+		}
+		return "";
 	}
-
-	
 }

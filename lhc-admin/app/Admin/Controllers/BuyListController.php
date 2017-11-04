@@ -16,7 +16,7 @@ use Encore\Admin\Layout\Content;
  * @Author: lerko
  * @Date:   2017-10-16 21:45:04
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-10-30 20:15:13
+ * @Last Modified time: 2017-11-04 10:23:19
  */
 /**
  * 购买列表
@@ -100,4 +100,6 @@ class BuyListController extends Controller {
 			});
 		});
 	}
+
+
 }

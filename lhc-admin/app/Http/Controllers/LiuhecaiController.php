@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Blade;
  * @Author: lerko
  * @Date:   2017-10-15 15:45:55
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-11-04 11:01:36
+ * @Last Modified time: 2017-11-05 13:46:17
  */
 /**
 * 用户端界面
@@ -55,7 +55,21 @@ class LiuhecaiController extends Controller
 
 	public function list()
 	{
-		return view("list");
+		$lottery=Lottery::orderBy("datetime","DESC")
+					->get();
+		Blade::directive("week",function($exp){
+			return "<?php echo App\Tool::getDayTimeByStr($exp);?>";
+		});
+		Blade::directive("bell_path",function($exp){
+			return "<?php echo App\Tool::getBellImagePath($exp);?>";
+		});
+		Blade::directive("bell_name",function($exp){
+			return "<?php echo App\Tool::getBellMap($exp);?>";
+		});
+		if($lottery){
+			return view("list",['data'=>$lottery->toArray()]);
+		}
+		return view("list",["data"=>[]]);
 	}
 
 	/**
@@ -67,14 +81,30 @@ class LiuhecaiController extends Controller
 	 */
 	public function getLittery($value='')
 	{
-		if($nowTime<=$jiudianbanEnd && $nowTime>=$jiudianbanStart){
-			return "fuck this time";
-		}
+		$nowTime=strtotime("2017-11-05 ".date("H:i:s"));
+		$jiudianbanStart=strtotime("2017-11-05 12:11:00");
+		$jiudianbanEnd=strtotime("2017-11-05 12:11:59");
+		// if($nowTime>$jiudianbanEnd || $nowTime<$jiudianbanStart){
+		// 	return view('lottery',["show"=>false]);
+		// }
 		$lottery=Lottery::where("datetime",Tool::getDayTime())
 				->first();
 		if($lottery){
-			return json_encode($lottery->toArray());
+			$bells=$lottery->toArray();
+			$data=[
+				"show"=>true,
+				"bells"=>Tool::getBellPathodeList([
+					$bells["key1"],
+					$bells["key2"],
+					$bells["key3"],
+					$bells["key4"],
+					$bells["key5"],
+					$bells["key6"],
+					$bells["skey"],
+				])
+			];
+			return view('lottery',$data);
 		}
-		return "";
+		return view('lottery',["show"=>false]);
 	}
 }

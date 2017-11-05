@@ -9,7 +9,7 @@ use App\Html;
  * @Author: lerko
  * @Date:   2017-10-15 16:21:17
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-11-04 15:32:15
+ * @Last Modified time: 2017-11-05 13:44:59
  */
 /**
  * 工具类
@@ -23,6 +23,22 @@ class Tool {
 	 */
 	public static function getDayTime() {
 		return date("Y-m-d") . " 00:00:00";
+	}
+
+	public static function getDayTimeByStr($value){
+		return date('Y-m-d',strtotime($value)).self::weekArr()[date("w",strtotime($value))];
+	}
+
+	public static function weekArr(){
+		return [
+			"周日",
+			"周一",
+			"周二",
+			"周三",
+			"周四",
+			"周五",
+			"周六",
+		];
 	}
 
 	public static function getBellMapData() {
@@ -111,6 +127,14 @@ class Tool {
 		$htmlString = "";
 		foreach ($ids as $key => $value) {
 			$htmlString .= "<img src='/image/bell/$value.png' />";
+		}
+		return $htmlString;
+	}
+
+	public static function getBellPathodeList(array $ids){
+		$htmlString = [];
+		foreach ($ids as $key => $value) {
+			$htmlString[]= "/image/bell/$value.png";
 		}
 		return $htmlString;
 	}

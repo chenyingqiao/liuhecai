@@ -17,7 +17,7 @@ use Encore\Admin\Layout\Row;
  * @Author: lerko
  * @Date:   2017-10-29 10:13:25
  * @Last Modified by:   lerko
- * @Last Modified time: 2017-11-04 15:31:33
+ * @Last Modified time: 2017-11-05 13:31:23
  */
 /**
  * 购买控制器
@@ -49,16 +49,12 @@ class AdminPageController extends Controller {
 
 	public function index() {
 		return Admin::content(function (Content $content) {
-            $content->header('header');
-            $content->description('description');
 			$content->body($this->grid());
 		});
 	}
 
 	public function edit($id) {
 	    return Admin::content(function (Content $content) use ($id) {
-            $content->header('header');
-            $content->description('description');
             $content->body($this->form()->edit($id));
         });
 	}
@@ -70,10 +66,6 @@ class AdminPageController extends Controller {
 	 */
 	public function create() {
 		return Admin::content(function (Content $content) {
-
-			$content->header('header');
-			$content->description('description');
-
 			$content->body($this->form());
 		});
 	}
@@ -81,6 +73,7 @@ class AdminPageController extends Controller {
 	public function grid(){
         return Admin::grid(Lottery::class, function (Grid $grid) {
             $grid->id('ID')->sortable();
+            $grid->model()->orderBy("datetime","DESC");
             $grid->column("普码")->display(function(){
             	return Tool::getBellImagePathList([
             		$this->key1,
@@ -107,6 +100,7 @@ class AdminPageController extends Controller {
 			$form->text('key5', "号码5");
 			$form->text('key6', "号码6");
 			$form->text('skey', "特码");
+			$form->hidden("datetime")->value(Tool::getDayTime());
 		});
 
 	}

@@ -8,492 +8,62 @@
 	<body class="body-background font-size-2rem">
 		<div class="yellow-header">历史开奖记录</div>
 		<div class="width-100">
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
+			@foreach ($data as $element)
+				<div class="center list-item">
+					<div class="list-item-header">
+						<span class="list-item-header-span1">第{{$element['id']}}期</span>
+						<span class="list-item-header-span2">@week($element['datetime'])</span>
+					</div>
+					<div class="bell-center width-100">
+						<div class="center float-left kaijiang-ball-content">
+							<span class="float-left">
+								<div><img src="@bell_path($element['key1'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['key1'])</span></div>
+							</span>
+						</div>
+						<div class="center float-left kaijiang-ball-content">
+							<span class="float-left">
+								<div><img src="@bell_path($element['key2'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['key2'])</span></div>
+							</span>
+						</div>
+						<div class="center float-left kaijiang-ball-content">
+							<span class="">
+								<div><img src="@bell_path($element['key3'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['key3'])</span></div>
+							</span>
+						</div>
+						<div class="center float-left kaijiang-ball-content">
+							<span class="">
+								<div><img src="@bell_path($element['key4'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['key4'])</span></div>
+							</span>
+						</div>
+						<div class="center float-left kaijiang-ball-content">
+							<span class="">
+								<div><img src="@bell_path($element['key5'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['key5'])</span></div>
+							</span>
+						</div>
+						<div class="center float-left kaijiang-ball-content">
+							<span class="">
+								<div><img src="@bell_path($element['key6'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['key6'])</span></div>
+							</span>
+						</div>
+						<div class="float-left plus kaijiang-ball-content">
+							+
+						</div>
+						<div class="center float-left width-37 kaijiang-ball-content">
+							<span class="">
+								<div><img src="@bell_path($element['skey'])" alt="" class="bell"></div>
+								<div><span class="bell-below-font">@bell_name($element['skey'])</span></div>
+							</span>
+						</div>
+						<div class="clear"></div>
+					</div>
 				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="center list-item">
-				<div class="list-item-header">
-					<span class="list-item-header-span1">第112期</span>
-					<span class="list-item-header-span2">10月07日(周二)</span>
-				</div>
-				<div class="bell-center width-100">
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="float-left">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="center float-left kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="float-left plus kaijiang-ball-content">
-						+
-					</div>
-					<div class="center float-left width-37 kaijiang-ball-content">
-						<span class="">
-							<div><img src="image/bell.png" alt="" class="bell"></div>
-							<div><span class="bell-below-font">龙</span></div>
-						</span>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
+			@endforeach
 		</div>
 
 
@@ -519,14 +89,14 @@
 					</div>
 				</a>
 			</div>
-			<div class="mune-grow">
+{{-- 			<div class="mune-grow">
 				<div class="mune-item">
 					<img src="image/4.png">
 				</div>
 				<div class="mune-item">
 					宝典
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</body>
 </html>

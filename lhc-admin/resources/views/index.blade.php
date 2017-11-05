@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>香港麒麟彩票</title>
+		<title>五合彩</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
@@ -16,7 +16,7 @@
 				<div class="width-100 kaijiang clearfix">
 					<div class="kaijiang-top-div width-100 center">
 						<span class="kaijiang-title vertical-center">第123期开奖结果</span>
-						<img class="kaijiang-title-image" src="image/zhibo.png">
+						<a href="/getLittery"><img class="kaijiang-title-image" src="image/zhibo.png"></a>
 					</div>
 					<!-- 球形列表 -->
 					<div class="center">
@@ -91,14 +91,14 @@
 					</div>
 				</a>
 			</div>
-			<div class="mune-grow">
+			{{-- <div class="mune-grow">
 				<div class="mune-item">
 					<img src="image/4.png">
 				</div>
 				<div class="mune-item">
 					宝典
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</body>
 </html>
